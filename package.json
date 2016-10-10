@@ -6,14 +6,22 @@
   "main": "src/index.jsx",
   "scripts": {
     "build": "browserify --extension=.jsx -t [ babelify --comments=false --compact=true --presets [ es2015 react ] ] src/index.jsx | uglifyjs -cm > dist/app.bundle.js",
+    "prod": "npm run build && cp dist/app.bundle.js ../docker/curt/web/scripts/app.bundle.js",
     "test": "test",
-    "watch": "watchify --extension=.jsx -t [ babelify --presets [ es2015 react ] ] src/index.jsx -o dist/app.bundle.js -dv"
+    "watch": "echo which watchify && watchify --extension=.jsx -t [ babelify --presets [ es2015 react ] ] src/index.jsx -o dist/app.bundle.js -dv",
+    "prod-watch": "watchify --extension=.jsx -t [ babelify --presets [ es2015 react ] ] src/index.jsx -o ../docker/curt/web/scripts/app.bundle.js -dv"
   },
   "author": "Darren Green <darren@gruen.site> (https://github.com/darrengruen)",
   "license": "UNLICENSED",
   "dependencies": {
+    "babel-polyfill": "^6.16.0",
+    "isomorphic-fetch": "^2.2.1",
+    "lodash": "^4.16.4",
     "react": "^15.3.2",
-    "react-dom": "^15.3.2"
+    "react-dom": "^15.3.2",
+    "redux": "^3.6.0",
+    "redux-logger": "^2.7.0",
+    "redux-thunk": "^2.1.0"
   },
   "devDependencies": {
     "babel": "^6.5.2",
@@ -27,6 +35,6 @@
     "eslint-plugin-import": "^2.0.0",
     "eslint-plugin-jsx-a11y": "^2.2.2",
     "eslint-plugin-react": "^6.3.0",
-    "watchify": "^3.7.0"
+    "watchify": "^3.6.0"
   }
 }
