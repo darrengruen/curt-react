@@ -1,6 +1,10 @@
 import fetch from 'isomorphic-fetch'
 import * as C from './constants'
 
+export function clearPrimes() {
+    return { type: C.CLEAR }
+}
+
 export function requestPrimes() {
     return { type: C.FETCH_REQUEST }
 }

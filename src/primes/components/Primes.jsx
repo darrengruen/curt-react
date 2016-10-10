@@ -7,6 +7,13 @@ const primes = (props) => {
         return (<div className="row">
             <div className="col-xs-12">
                 <h3>Here is a list of the first 1000 Prime numbers</h3>
+                <button
+                    className="btn btn-danger"
+                    onClick={ () => props.dispatch(actions.clearPrimes()) }
+                    type="button"
+                >
+                    Clear List
+                </button>
                 <div className="well well-sm">
                     <PrimesList primes={ props.state.primes.primes } />
                 </div>

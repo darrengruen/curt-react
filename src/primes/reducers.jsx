@@ -2,6 +2,8 @@ import * as C from './constants'
 
 const primes = (state = { primes: [], isFetching: false }, action) => {
     switch (action.type) {
+    case C.CLEAR:
+        return Object.assign({}, state, { primes: [] })
     case C.FETCH_REQUEST:
         return Object.assign({}, state, { isFetching: true })
     case C.RECEIVE:
