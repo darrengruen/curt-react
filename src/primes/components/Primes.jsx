@@ -19,7 +19,7 @@ const primes = (props) => {
             <div className="col-xs-12">
                 <p>No Primes Currently</p>
                 <button
-                    className="btn btn-link"
+                    className="btn btn-success"
                     onClick={ () => props.dispatch(actions.fetchPrimes()) }
                     type="button"
                 >
