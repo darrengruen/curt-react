@@ -1,0 +1,6 @@
+export const FETCH_REQUEST = 'primes/FETCH_REQUEST'
+export const FETCH_SUCCESS = 'primes/FETCH_SUCCESS'
+export const FETCH_FAILURE = 'primes/FETCH_FAILURE'
+export const RECEIVE = 'primes/RECEIVE'
+export const LOAD = 'primes/LOAD'
+export const CLEAR = 'primes/CLEAR'
