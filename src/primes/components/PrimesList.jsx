@@ -3,7 +3,9 @@ import React, { PropTypes } from 'react'
 
 const primes = props => <div className="row">
     <div className="col-xs-12">
-        { map(props.primes, (p, ind) => <span key={ ind } className="badge">{ p }</span>) }
+        <ul className="list-inline">
+            { map(props.primes, (p, ind) => <li key={ ind }>{ p }</li>) }
+        </ul>
     </div>
 </div>
 
